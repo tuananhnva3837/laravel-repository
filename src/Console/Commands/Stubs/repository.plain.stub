@@ -1,0 +1,14 @@
+<?php
+
+namespace DummyNamespace;
+
+use AnhAiT\LaravelRepository\Repository;
+use Illuminate\Database\Eloquent\Model;
+
+class DummyClass extends Repository
+{
+    public function model()
+    {
+        return Model::class;
+    }
+}
