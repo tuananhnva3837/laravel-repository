@@ -11,26 +11,12 @@ abstract class Repository implements RepositoryInterface
 
     private $model;
 
-    public function __construct(App $app)
+    public function __construct(Model $model)
     {
-        $this->app = $app;
-        $this->makeModel();
+        $this->model = $model;
     }
 
     abstract public function model();
-
-    public function makeModel()
-    {
-        $model = $this->app->make($this->model());
-
-        if (!$model instanceof Model) {
-            throw new RepositoryException(
-                "Class {$this->model()} must be an instance of Illuminate\\Database\\Eloquent\\Model"
-            );
-        }
-
-        return $this->model = $model;
-    }
 
     public function all($columns = array('*'))
     {
@@ -69,6 +55,11 @@ abstract class Repository implements RepositoryInterface
         return $this->model->where($field, $value)
                            ->select($columns)
                            ->first();
+    }
+
+    public function with($relations)
+    {
+        return $this->model->with($relations);
     }
 
     public function setModel(Model $model)
