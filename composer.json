@@ -2,14 +2,20 @@
     "name": "tuananhnva/laravel-repository",
     "description": "Laravel Repository Pattern",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Anh AiT",
             "email": "tuananhnva@gmail.com"
         }
     ],
-    "require": {},
-    "require-dev": {},
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^7.5"
+    },
     "autoload": {
         "psr-4": {
             "AnhAiT\\LaravelRepository\\":"src/"
