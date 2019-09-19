@@ -8,9 +8,7 @@
             "email": "tuananhnva@gmail.com"
         }
     ],
-    "require": {
-        "php": ">=5.3.0",
-    },
+    "require": {},
     "autoload": {
         "psr-4": {
             "AnhAiT\\LaravelRepository\\":"src/"
