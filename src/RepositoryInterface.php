@@ -20,6 +20,8 @@ interface RepositoryInterface
 
     public function findBy(string $field, mixed $value, $columns = array('*'));
 
+    public function with($relations);
+
     public function setModel(Model $model);
 
     public function getModel();
